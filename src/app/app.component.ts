@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+  template: `<h1>Welcome to {{title}}!</h1>`
 })
 export class AppComponent {
-  title = 'ng-pokemon-app';
+  title = 'Application de gestion des pokémons';
 }
