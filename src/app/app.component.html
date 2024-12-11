@@ -2,11 +2,13 @@
 
 <input 
     #input
-    (keyup)="selectPokemon(input.value)"
+    (keyup.enter)="selectPokemon(input.value)"
     type="number"
 />
 
-<p>{{ pokemonSelected?.name }}</p>
+<p *ngIf="pokemonSelected">
+    Vous avez sélèctionné le pokémon: {{ pokemonSelected?.name }}
+</p>
 
 <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
