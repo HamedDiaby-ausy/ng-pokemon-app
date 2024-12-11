@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  imports: [CommonModule],
 })
 export class AppComponent implements OnInit {
   pokemonList: Pokemon[] = POKEMONS;
