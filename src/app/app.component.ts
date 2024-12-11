@@ -7,14 +7,21 @@ import { Pokemon } from './pokemon';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  pokemonList:Pokemon[] = POKEMONS;
+  pokemonList: Pokemon[] = POKEMONS;
+  pokemonSelected: Pokemon | undefined
 
   ngOnInit(): void {
     console.table(this.pokemonList);
   }
 
-  selectPokemon(event: MouseEvent){
-    const index: number = +(event.target as HTMLInputElement).value;
-    console.log(`Vous avez sélèctionnez le pokemon ${this.pokemonList[index].name}`);
+  selectPokemon(pokemonId: string){
+    const pokemon: Pokemon|undefined = this.pokemonList.find(pokemon=> pokemon.id == +pokemonId)
+    this.pokemonSelected = pokemon;
+
+    if(pokemon){
+      console.log(`Vous avez sélèctionnez le pokemon ${pokemon.name}`);
+    } else {
+      console.log(`Ce pokemon existe pas !`);
+    }
   }
 }
